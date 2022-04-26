@@ -7,6 +7,4 @@ import java.util.List;
 
 public interface EmployeeRepo extends CrudRepository<Employee, Long> {
 
-    List<Employee> findBySurname(String surname);
-
 }

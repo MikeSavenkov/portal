@@ -1,40 +1,47 @@
 package com.fides.portal.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Employee {
+@Table(name = "employee")
+public class Employee  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
-    private String name;
-    private String surname;
+    @Column(name = "first_name")
+    private String firstName;
+    @Column(name = "last_name")
+    private String lastName;
 
     public Employee() {
 
     }
 
-    public Employee(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
+    public Employee(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.id = id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setId(Long id) {
+        this.id = id;
     }
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public Long getId() {
+        return id;
     }
-    public String getName() {
-        return name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
-    public String getSurname() {
-        return surname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
     }
 
 }
