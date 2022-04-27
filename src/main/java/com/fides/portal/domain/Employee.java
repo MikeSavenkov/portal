@@ -14,6 +14,8 @@ public class Employee  {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
+    private String subdivision;
+    private String position;
 
     public Employee() {
 
@@ -22,7 +24,6 @@ public class Employee  {
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.id = id;
     }
 
     public void setId(Long id) {
@@ -37,11 +38,23 @@ public class Employee  {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    public void setSubdivision(String subdivision) {
+        this.subdivision = subdivision;
+    }
+    public void setPosition(String position) {
+        this.position = position;
+    }
     public String getFirstName() {
         return firstName;
     }
     public String getLastName() {
         return lastName;
+    }
+    public String getSubdivision() {
+        return subdivision;
+    }
+    public String getPosition() {
+        return position;
     }
 
 }
